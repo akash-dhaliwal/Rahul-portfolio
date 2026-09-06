@@ -63,7 +63,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-xl">
-              Designer & Video Editor
+              Graphic Designer & Video Editor
               <br />
               <span className="text-white/60">
                 Crafting visual stories that inspire and engage
