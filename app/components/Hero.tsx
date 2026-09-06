@@ -120,7 +120,7 @@ export default function Hero() {
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-xl overflow-hidden border-2 border-white/30 shrink-0">
                   <Image
                     src="/assets/profile-picture.png"
-                    alt="Prakash - Graphic Designer & Video Editor"
+                    alt="Rahul - Graphic Designer & Video Editor"
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px"
@@ -134,7 +134,7 @@ export default function Hero() {
                     Available for Projects
                   </p>
                   <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mt-1">
-                    Prakash Katariya
+                    Rahul
                   </p>
                   <p className="text-xs sm:text-sm md:text-base text-white/60 mt-1">
                     Graphic Designer & Video Editor
