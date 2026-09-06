@@ -4,8 +4,11 @@
    CSS Variables - Black and White Theme
    ============================================ */
 :root {
-  --background: #1b1b13;
+  --background: #1b1613;
   --foreground: #f8a73e;
+  --primary: #f8a73e;
+  --secondary: #dc5c01;
+  --accent: #99998f;
 }
 
 /* ============================================
@@ -15,6 +18,9 @@
   /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
 
   /* Fonts */
   --font-sans: var(--font-geist-sans);
