@@ -104,7 +104,7 @@ export default function Hero() {
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-5 md:p-6 hover:bg-white/15 transition-colors cursor-pointer"
+                  className="bg-red/10 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-5 md:p-6 hover:bg-white/15 transition-colors cursor-pointer"
                 >
                   <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium text-center">
                     {skill}
