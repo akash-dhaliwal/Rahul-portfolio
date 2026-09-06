@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     description:
       "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
   },
-  viewport: "width=device-width, initial-scale=1.0",
-  themeColor: "#000000",
+  //viewport: "width=device-width, initial-scale=1.0",
+  //themeColor: "#000000",
 };
 
 export default function Home() {
