@@ -198,7 +198,7 @@ export default function Header() {
 
                   {/* Right - Copyright */}
                   <p className="text-sm text-white/80">
-                    © 2025 prakash<sup className="text-xs">®</sup> Studio
+                    © 2025 Rahul<sup className="text-xs">®</sup> Studio
                   </p>
                 </div>
               </div>
