@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prakash | Graphic Designer & Video Editor Portfolio",
+  title: "Rahul | Graphic Designer & Video Editor Portfolio",
   description:
     "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
   keywords: [
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     images:
       "https://i.ibb.co/3PJzhXw/B58-A4-A9-C-C3-BE-4-E18-AEDD-8639-B169-A57-D.png",
-    title: "Prakash | Graphic Designer & Video Editor Portfolio",
+    title: "Rahul | Graphic Designer & Video Editor Portfolio",
     description:
       "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
   },
   twitter: {
     images:
       "https://i.ibb.co/3PJzhXw/B58-A4-A9-C-C3-BE-4-E18-AEDD-8639-B169-A57-D.png",
-    title: "Prakash | Graphic Designer & Video Editor Portfolio",
+    title: "Rahul | Graphic Designer & Video Editor Portfolio",
     description:
       "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
   },
