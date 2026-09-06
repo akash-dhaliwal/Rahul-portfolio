@@ -19,6 +19,20 @@ const geistMono = Geist_Mono({
 
 export const EMAIL = "prakashkatariya996@gmail.com";
 
+// ✅ ADD THIS NEW CODE HERE
+export const metadata: Metadata = {
+  title: "Rahul's Portfolio",
+  description: "Personal portfolio website",
+  // You can add more metadata here like:
+  // keywords: "portfolio, developer, projects",
+  // authors: [{ name: "Rahul" }],
+};
+
+export const viewport = {
+  themeColor: "#000000", // Change this color to match your theme
+};
+// ✅ END OF NEW CODE
+
 export default function RootLayout({
   children,
 }: Readonly<{
