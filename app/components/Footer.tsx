@@ -57,11 +57,12 @@ const Footer = () => {
               <p>© {currentYear} All Rights Reserved.</p>
               <p className="hover:text-white transition-colors">
                 <Link
-                  href="https://mayurnakum-portfolio.vercel.app"
+                  //href="https://mayurnakum-portfolio.vercel.app"
+                  href="https://honeysoni.rf.gd"
                   target="_blank"
                   className="mt-1"
                 >
-                  Made with 🤍 by Mayur Nakum
+                  Made with 🤍 by Harish Kumar
                 </Link>
               </p>
             </div>
@@ -82,7 +83,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>Surat, Gujarat, India</span>
+              <span>Faridkot, Punjab, India</span>
             </div>
           </div>
         </div>
