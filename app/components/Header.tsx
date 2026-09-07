@@ -46,7 +46,7 @@ export default function Header() {
         {/* Background - Black initially, Glass effect on scroll */}
         <div
           className={`absolute inset-0 transition-all duration-300 backdrop-blur-xl backdrop-saturate-150 ${
-            isScrolled ? "bg-black/40" : "bg-black/80"
+            isScrolled ? "bg-[#f8a73e]/40" : "bg-black/80"
           }`}
         >
           {/* Background Pattern - Show like Footer initially */}
