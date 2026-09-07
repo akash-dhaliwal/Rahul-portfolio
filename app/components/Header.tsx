@@ -52,7 +52,7 @@ export default function Header() {
           {/* Background Pattern - Show like Footer initially */}
           <div
             className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
-              isScrolled ? "opacity-5" : "opacity-10"
+              isScrolled ? "opacity-1" : "opacity-1"
             }`}
           >
             <div
