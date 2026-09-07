@@ -65,8 +65,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Bottom Blurry Shadow Effect - Only show when scrolled }
-        {isScrolled && (
+        {/* Bottom Blurry Shadow Effect - Only show when scrolled */} 
+        {/*isScrolled && (
           <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none">
             <div
               className="w-full h-full"
@@ -78,7 +78,7 @@ export default function Header() {
               }}
             />
           </div>
-        )}  */
+        )*/}  
 
         <nav className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="flex h-16 md:h-20 items-center justify-between">
