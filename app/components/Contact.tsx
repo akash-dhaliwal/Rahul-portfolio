@@ -87,6 +87,24 @@ export default function Contact() {
                 </div>
               </motion.div>
 
+              {/* Location */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+              >
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+                    Phone
+                  </p>
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
+                    +91 78978-97897
+                  </p>
+                </div>
+              </motion.div>
+
               {/* CTA Button */}
               <div className="mt-6 md:mt-8">
                 <Button
