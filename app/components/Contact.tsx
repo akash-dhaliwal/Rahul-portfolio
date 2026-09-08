@@ -38,87 +38,100 @@ export default function Contact() {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
           {/* Left Column - Contact Information */}
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col space-y-6 md:space-y-8"
-          >
-            {/* Contact Card */}
-            <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
-                Get In Touch
-              </h3>
+<motion.div
+  initial={{ y: 50, opacity: 0 }}
+  animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="flex flex-col space-y-6 md:space-y-8"
+>
+  {/* Contact Card */}
+  <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl">
+    
+    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
+      Get In Touch
+    </h3>
 
-              {/* Email */}
-              <motion.a
-                href={`mailto:${EMAIL}`}
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 mb-4 md:mb-6 group"
-              >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                  <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-                    Email
-                  </p>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white group-hover:text-white transition-colors">
-                    {EMAIL}
-                  </p>
-                </div>
-              </motion.a>
+    {/* Contact Details - Equal Spacing */}
+    <div className="space-y-4 md:space-y-6">
 
-              {/* Location */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-              >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-                    Location
-                  </p>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-                    Faridkot, Punjab, India
-                  </p>
-                </div>
-              </motion.div>
+      {/* Email */}
+      <motion.a
+        href={`mailto:${EMAIL}`}
+        whileHover={{ x: 5 }}
+        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+      >
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+          <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </div>
 
-              {/* Location */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-              >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-                    Phone
-                  </p>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-                    +91 78978-97897
-                  </p>
-                </div>
-              </motion.div>
+        <div className="flex-1">
+          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+            Email
+          </p>
 
-              {/* CTA Button */}
-              <div className="mt-6 md:mt-8">
-                <Button
-                  variant="filled"
-                  size="md"
-                  icon={<Send className="w-5 h-5" />}
-                  className="w-full sm:w-auto"
-                  onClick={() => (window.location.href = `mailto:${EMAIL}`)}
-                >
-                  Send Email
-                </Button>
-              </div>
-            </div>
-          </motion.div>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white group-hover:text-white transition-colors">
+            {EMAIL}
+          </p>
+        </div>
+      </motion.a>
+
+      {/* Location */}
+      <motion.div
+        whileHover={{ x: 5 }}
+        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+      >
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+          <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </div>
+
+        <div className="flex-1">
+          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+            Location
+          </p>
+
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
+            Faridkot, Punjab, India
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Phone */}
+      <motion.div
+        whileHover={{ x: 5 }}
+        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+      >
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+          <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </div>
+
+        <div className="flex-1">
+          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+            Phone
+          </p>
+
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
+            +91 78978-97897
+          </p>
+        </div>
+      </motion.div>
+
+    </div>
+
+    {/* CTA Button */}
+    <div className="mt-6 md:mt-8">
+      <Button
+        variant="filled"
+        size="md"
+        icon={<Send className="w-5 h-5" />}
+        className="w-full sm:w-auto"
+        onClick={() => (window.location.href = `mailto:${EMAIL}`)}
+      >
+        Send Email
+      </Button>
+    </div>
+
+  </div>
+</motion.div>
 
           {/* Right Column - Map */}
           <motion.div
