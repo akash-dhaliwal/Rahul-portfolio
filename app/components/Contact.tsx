@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import Button from "./Button";
 import { EMAIL } from "../layout";
 
@@ -20,16 +20,22 @@ export default function Contact() {
     >
       {/* Main Container */}
       <div className="relative z-10 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-7xl mx-auto">
+
         {/* Section Header */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          animate={
+            inView
+              ? { y: 0, opacity: 1 }
+              : { y: 50, opacity: 0 }
+          }
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-16 lg:mb-20 text-center"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-4">
             Contact
           </h2>
+
           <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto">
             Let's discuss your next project and bring your vision to life
           </p>
@@ -37,110 +43,124 @@ export default function Contact() {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+
           {/* Left Column - Contact Information */}
-<motion.div
-  initial={{ y: 50, opacity: 0 }}
-  animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="flex flex-col space-y-6 md:space-y-8"
->
-  {/* Contact Card */}
-  <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl">
-    
-    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
-      Get In Touch
-    </h3>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={
+              inView
+                ? { y: 0, opacity: 1 }
+                : { y: 50, opacity: 0 }
+            }
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col space-y-6 md:space-y-8"
+          >
+            {/* Contact Card */}
+            <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl">
 
-    {/* Contact Details - Equal Spacing */}
-    <div className="space-y-4 md:space-y-6">
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
+                Get In Touch
+              </h3>
 
-      {/* Email */}
-      <motion.a
-        href={`mailto:${EMAIL}`}
-        whileHover={{ x: 5 }}
-        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-      >
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-          <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
-        </div>
+              {/* Contact Details */}
+              <div className="space-y-4 md:space-y-6">
 
-        <div className="flex-1">
-          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-            Email
-          </p>
+                {/* Email */}
+                <motion.a
+                  href={`mailto:${EMAIL}`}
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white group-hover:text-white transition-colors">
-            {EMAIL}
-          </p>
-        </div>
-      </motion.a>
+                  <div className="flex-1">
+                    <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+                      Email
+                    </p>
 
-      {/* Location */}
-      <motion.div
-        whileHover={{ x: 5 }}
-        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-      >
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-          <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
-        </div>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white group-hover:text-white transition-colors">
+                      {EMAIL}
+                    </p>
+                  </div>
+                </motion.a>
 
-        <div className="flex-1">
-          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-            Location
-          </p>
+                {/* Location */}
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-            Faridkot, Punjab, India
-          </p>
-        </div>
-      </motion.div>
+                  <div className="flex-1">
+                    <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+                      Location
+                    </p>
 
-      {/* Phone */}
-      <motion.div
-        whileHover={{ x: 5 }}
-        className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-      >
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-          <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
-        </div>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
+                      Faridkot, Punjab, India
+                    </p>
+                  </div>
+                </motion.div>
 
-        <div className="flex-1">
-          <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
-            Phone
-          </p>
+                {/* Phone */}
+                <motion.a
+                  href="tel:+917897897897"
+                  whileHover={{ x: 5 }}
+                  className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-            +91 78978-97897
-          </p>
-        </div>
-      </motion.div>
+                  <div className="flex-1">
+                    <p className="text-xs sm:text-sm md:text-base text-white/60 mb-1 md:mb-2 font-medium">
+                      Phone
+                    </p>
 
-    </div>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
+                      +91 78978-97897
+                    </p>
+                  </div>
+                </motion.a>
 
-    {/* CTA Button */}
-    <div className="mt-6 md:mt-8">
-      <Button
-        variant="filled"
-        size="md"
-        icon={<Send className="w-5 h-5" />}
-        className="w-full sm:w-auto"
-        onClick={() => (window.location.href = `mailto:${EMAIL}`)}
-      >
-        Send Email
-      </Button>
-    </div>
+              </div>
 
-  </div>
-</motion.div>
+              {/* CTA Button */}
+              <div className="mt-6 md:mt-8">
+                <Button
+                  variant="filled"
+                  size="md"
+                  icon={<Send className="w-5 h-5" />}
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    (window.location.href = `mailto:${EMAIL}`)
+                  }
+                >
+                  Send Email
+                </Button>
+              </div>
+
+            </div>
+          </motion.div>
 
           {/* Right Column - Map */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+            animate={
+              inView
+                ? { y: 0, opacity: 1 }
+                : { y: 50, opacity: 0 }
+            }
             transition={{ duration: 0.6, delay: 0.4 }}
             className="relative"
           >
             <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+
               {/* Google Maps Embed */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16323.797071881629!2d74.75144082885662!3d30.67182487396008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1788842349674!5m2!1sen!2sin"
@@ -152,23 +172,31 @@ export default function Contact() {
               {/* Map Overlay Info */}
               <div className="absolute bottom-4 left-4 right-4 z-10">
                 <div className="bg-black/80 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6">
+
                   <div className="flex items-center gap-3 md:gap-4">
+
                     <div className="bg-white/20 rounded-full p-2 md:p-3">
                       <MapPin className="w-4 h-4 md:w-5 md:h-5 text-white" />
                     </div>
+
                     <div>
                       <p className="text-white/60 text-xs sm:text-sm md:text-base mb-1">
                         Current Location
                       </p>
+
                       <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
-                        Fakridkot, Punjab, India
+                        Faridkot, Punjab, India
                       </p>
                     </div>
+
                   </div>
+
                 </div>
               </div>
+
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
