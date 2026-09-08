@@ -112,7 +112,7 @@ export default function Contact() {
             <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
               {/* Google Maps Embed */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238133.18800900166!2d72.65748353239132!3d21.159120355102836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1733034398264!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16323.797071881629!2d74.75144082885662!3d30.67182487396008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1788842349674!5m2!1sen!2sin"
                 className="absolute top-0 left-0 w-full h-full"
                 loading="lazy"
                 allowFullScreen
@@ -130,7 +130,7 @@ export default function Contact() {
                         Current Location
                       </p>
                       <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
-                        Surat, Gujarat, India
+                        Fakridkot, Punjab, India
                       </p>
                     </div>
                   </div>
