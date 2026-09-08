@@ -82,7 +82,7 @@ export default function Contact() {
                     Location
                   </p>
                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-                    Surat, Gujarat, India
+                    Faridkot, Punjab, India
                   </p>
                 </div>
               </motion.div>
