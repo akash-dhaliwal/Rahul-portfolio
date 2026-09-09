@@ -55,15 +55,15 @@ export default function Hero() {
           <div className="flex flex-col space-y-6 lg:space-y-8">
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight">
-              <span className="block">I'm</span>
+              <span className="block">Hope</span>
               <span className="block bg-linear-to-b from-white via-white to-white/70 bg-clip-text text-transparent">
-                Rahul 
+                Files 
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-light max-w-xl">
-              Graphic Designer & Video Editor
+              Video Editor
               <br />
               <span className="text-white/60">
                 Crafting visual stories that inspire and engage
