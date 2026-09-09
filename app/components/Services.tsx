@@ -104,7 +104,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="mb-12 md:mb-16 lg:mb-20 text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[var(--primary)] leading-tight mb-4">
             Services
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto">
