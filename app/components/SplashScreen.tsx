@@ -58,7 +58,7 @@ export default function SplashScreen() {
           animate={{ opacity: 1 }}
           exit="exit"
           variants={containerVariants}
-          className="fixed inset-0 z-[100] bg-[#f8a73e] flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[100] bg-primary flex items-center justify-center overflow-hidden"
         >
           {/* Background Pattern - Matching App Theme */}
           <div className="absolute inset-0 opacity-20">
