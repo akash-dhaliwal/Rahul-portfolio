@@ -51,7 +51,7 @@ export default function Home() {
           background: `linear-gradient(
             to bottom right,
             var(--background),
-            color-mix(in srgb, var(--foreground) 12%, var(--background)),
+            color-mix(in srgb, var(--foreground) 5%, var(--background)),
             var(--background)
           )`,
         }}
