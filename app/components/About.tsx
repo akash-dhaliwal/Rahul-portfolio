@@ -49,7 +49,7 @@ export default function About() {
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex flex-col justify-center"
             >
-              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight mb-4 md:mb-6 tracking-tight">
+              <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-[var(--primary)] leading-tight mb-4 md:mb-6 tracking-tight">
                 About
               </h2>
               <div className="flex items-baseline gap-2">
