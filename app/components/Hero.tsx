@@ -80,7 +80,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-4">
               <Button
-                variant="filled"
+                variant="orange-filled"
                 size="md"
                 icon="→"
                 className="hover:text-[var(--primary)]"
