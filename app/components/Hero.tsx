@@ -57,7 +57,7 @@ export default function Hero() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight">
               <span className="block">Hope</span>
               <span className="block bg-linear-to-b from-white via-white to-white/70 bg-clip-text text-transparent">
-                Files 
+                Films 
               </span>
             </h1>
 
