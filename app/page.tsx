@@ -42,7 +42,21 @@ export default function Home() {
     <>
       <Hero />
       {/* Unified Background for All Sections  <div className="relative w-full bg-linear-to-br from-black via-gray-900 to-black">     */}
-        <div className="relative w-full bg-linear-to-br from-black via-[var(--primary)]/10 to-black">
+      {/*<div className="relative w-full bg-linear-to-br from-black via-[var(--primary)]/10 to-black">*/}
+
+      {/* Unified Background for All Sections */}
+      <div
+        className="relative w-full"
+        style={{
+          background: `linear-gradient(
+            to bottom right,
+            var(--background),
+            color-mix(in srgb, var(--foreground) 12%, var(--background)),
+            var(--background)
+          )`,
+        }}
+      >
+      
         {/* Unified Background Pattern */}
         <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
           <div
