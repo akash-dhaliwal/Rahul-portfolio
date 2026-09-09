@@ -31,6 +31,7 @@ export default function ProjectsPage() {
         />
       </div>
 
+      {/* Main Content */}
       <div className="relative z-10 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-7xl mx-auto py-24 md:py-32">
 
         {/* Header */}
