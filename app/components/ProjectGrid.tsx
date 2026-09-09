@@ -108,12 +108,12 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
                 {project.description}
               </p>
 
-              {/* YouTube Link Text */}
+              {/* YouTube Link Text 
               <div className="mt-5 flex items-center gap-2 text-[var(--primary)] font-semibold text-sm sm:text-base">
                 <span>Watch on YouTube</span>
 
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </div>
+              </div> */}
             </div>
 
           </div>
