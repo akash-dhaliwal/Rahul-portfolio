@@ -138,7 +138,7 @@ export default function Hero() {
                     Rahul
                   </p>
                   <p className="text-xs sm:text-sm md:text-base text-white/60 mt-1">
-                    Graphic Designer & Video Editor
+                    Video Editor
                   </p>
                   <Button
                     variant="orange-filled"
