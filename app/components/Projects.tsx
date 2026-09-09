@@ -13,6 +13,7 @@ interface Project {
   title: string;
   description: string;
   category: string;
+  youtubeUrl: string;
 }
 
 const projects: Project[] = [
@@ -23,7 +24,9 @@ const projects: Project[] = [
     description:
       "Complete brand identity system with logo, color palette, and brand guidelines for a modern tech startup.",
     category: "Branding",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
   },
+
   {
     id: 2,
     image: "/assets/projects/project-iamge2.png",
@@ -31,7 +34,9 @@ const projects: Project[] = [
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
   },
+
   {
     id: 3,
     image: "/assets/projects/project-iamge3.png",
@@ -39,7 +44,9 @@ const projects: Project[] = [
     description:
       "Corporate video production with cinematic visuals, storytelling, and professional post-production editing.",
     category: "Video Editing",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
   },
+
   {
     id: 4,
     image: "/assets/projects/project-iamge4.png",
@@ -47,7 +54,9 @@ const projects: Project[] = [
     description:
       "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
     category: "Graphic Design",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_4",
   },
+
   {
     id: 5,
     image: "/assets/projects/project-iamge5.png",
@@ -55,7 +64,9 @@ const projects: Project[] = [
     description:
       "Product launch video featuring cinematic footage, motion graphics, and engaging storytelling.",
     category: "Video Production",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_5",
   },
+
   {
     id: 6,
     image: "/assets/projects/project-iamge6.png",
@@ -63,6 +74,7 @@ const projects: Project[] = [
     description:
       "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
     category: "Motion Graphics",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_6",
   },
 ];
 
@@ -90,7 +102,7 @@ export default function Projects() {
     >
       {/* Main Container */}
       <div className="relative z-10 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -122,14 +134,9 @@ export default function Projects() {
           {projects.map((project) => (
             <motion.a
               key={project.id}
-              href={`#project-${project.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-
-                // Temporary action.
-                // You can replace this later with individual project pages.
-                console.log(`Opening project: ${project.title}`);
-              }}
+              href={project.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={{
                 hidden: {
                   y: 50,
@@ -152,9 +159,10 @@ export default function Projects() {
             >
               {/* Project Card */}
               <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden hover:border-[var(--primary)]/40 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                
+
                 {/* Image Container */}
                 <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-72 xl:h-80 overflow-hidden">
+
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -173,10 +181,17 @@ export default function Projects() {
                     </span>
                   </div>
 
-                  {/* External Link Icon */}
+                  {/* YouTube / External Link Icon */}
                   <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-[var(--primary)]/80 backdrop-blur-sm border border-[var(--primary)] rounded-full p-2">
                       <ExternalLink className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+
+                  {/* Watch Video Text */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-[var(--primary)] text-white px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base shadow-lg">
+                      Watch Video →
                     </div>
                   </div>
                 </div>
@@ -211,4 +226,4 @@ export default function Projects() {
       </div>
     </section>
   );
-} 
+}
