@@ -176,6 +176,22 @@ export default function Projects() {
             </motion.a>
           ))}
         </motion.div>
+
+                {/* View All Projects Button */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          <Link href="/projects">
+            <Button
+              variant="orange-filled"
+              size="md"
+              icon="→"
+            >
+              View All Projects
+            </Button>
+          </Link>
+        </div>
+
+
+        
       </div>
     </section>
   );
