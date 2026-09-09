@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "blank" | "filled";
+  variant?: "blank" | "filled" | "orange-filled" | "orange-blank";
   className?: string;
   onClick?: () => void;
   icon?: ReactNode;
@@ -28,6 +28,42 @@ export default function Button({
 
   const baseClasses =
     "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 cursor-pointer";
+
+  /** ---------------- ORANGE FILLED VARIANT ---------------- */
+  if (variant === "orange-filled") {
+    return (
+      <button
+        onClick={onClick}
+        className={clsx(
+          baseClasses,
+          sizeClasses[size],
+          "bg-[var(--primary)] text-white hover:bg-transparent hover:text-[var(--primary)] hover:border-[var(--primary)] hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/60 focus:ring-offset-2 focus:ring-offset-black border border-[var(--primary)]",
+          className
+        )}
+      >
+        {children}
+        {icon && <span className="text-lg">{icon}</span>}
+      </button>
+    );
+  }
+
+  /** ---------------- ORANGE BLANK VARIANT ---------------- */
+  if (variant === "orange-blank") {
+    return (
+      <button
+        onClick={onClick}
+        className={clsx(
+          baseClasses,
+          sizeClasses[size],
+          "border border-[var(--primary)] text-[var(--primary)] bg-transparent hover:bg-[var(--primary)] hover:text-white hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/60 focus:ring-offset-2 focus:ring-offset-black",
+          className
+        )}
+      >
+        {children}
+        {icon && <span className="text-lg">{icon}</span>}
+      </button>
+    );
+  }
 
   /** ---------------- FILLED VARIANT ---------------- */
   if (variant === "filled") {
