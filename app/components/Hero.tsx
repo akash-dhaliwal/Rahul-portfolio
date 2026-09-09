@@ -83,6 +83,7 @@ export default function Hero() {
                 variant="filled"
                 size="md"
                 icon="→"
+                className="hover:text-[var(--primary)]"
                 onClick={() => (window.location.href = "#projects")}
               >
                 View My Work
