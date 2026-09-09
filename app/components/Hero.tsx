@@ -141,7 +141,7 @@ export default function Hero() {
                     Graphic Designer & Video Editor
                   </p>
                   <Button
-                    variant="blank"
+                    variant="orange-filled"
                     size="sm"
                     icon={<Mail className="w-4 h-4" />}
                     className="mt-3 sm:mt-4 w-fit"
