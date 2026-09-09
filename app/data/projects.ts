@@ -8,6 +8,7 @@ export const projects: Project[] = [
     description:
       "Complete brand identity system with logo, color palette, and brand guidelines for a modern tech startup.",
     category: "Branding",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
   },
 
   {
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
   },
 
   {
@@ -26,6 +28,7 @@ export const projects: Project[] = [
     description:
       "Corporate video production with cinematic visuals, storytelling, and professional post-production editing.",
     category: "Video Editing",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
   },
 
   {
@@ -35,6 +38,7 @@ export const projects: Project[] = [
     description:
       "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
     category: "Graphic Design",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_4",
   },
 
   {
@@ -44,6 +48,7 @@ export const projects: Project[] = [
     description:
       "Product launch video featuring cinematic footage, motion graphics, and engaging storytelling.",
     category: "Video Production",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_5",
   },
 
   {
@@ -53,9 +58,11 @@ export const projects: Project[] = [
     description:
       "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
     category: "Motion Graphics",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_6",
   },
 
   // ADD MORE PROJECTS HERE
+
   {
     id: 7,
     image: "/assets/projects/project-iamge7.png",
@@ -63,6 +70,7 @@ export const projects: Project[] = [
     description:
       "Your new project description goes here.",
     category: "Graphic Design",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_7",
   },
 
   {
@@ -72,5 +80,6 @@ export const projects: Project[] = [
     description:
       "Your new project description goes here.",
     category: "Branding",
+    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_8",
   },
 ];
