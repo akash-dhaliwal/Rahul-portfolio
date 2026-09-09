@@ -4,7 +4,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
-  const text = "Rahul®";
+  const text = "HOPE FILES®";
   const characters = text.split("");
 
   // Animation timing controls
