@@ -13,7 +13,7 @@ export default function Logo({ className = "" }: LogoProps) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      Rahul<sup className="text-xs">®</sup>
+      Hope Files<sup className="text-xs">®</sup>
     </motion.span>
   );
 }
