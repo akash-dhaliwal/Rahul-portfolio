@@ -1,30 +1,19 @@
 "use client";
 
-import { useRef } from "react";
-
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   return (
     <section
       id="hero"
-      className="relative w-full flex justify-center bg-black overflow-hidden"
+      className="relative w-full bg-black overflow-hidden"
     >
       <div className="relative w-full aspect-video">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source
-            src="/assets/hero-section-main-video.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/TlMlgzh-BwA?autoplay=1&mute=1&loop=1&playlist=TlMlgzh-BwA&controls=0&rel=0"
+          title="Highlight Section"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
       </div>
     </section>
   );
