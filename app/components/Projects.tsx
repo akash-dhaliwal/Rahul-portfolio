@@ -9,7 +9,6 @@ import Button from "./Button";
 
 interface Project {
   id: number;
-  image: string;
   title: string;
   description: string;
   category: string;
@@ -19,7 +18,6 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    image: "/assets/projects/project-iamge1.png",
     title: "TVC & Commercial Films | From Story to Screen",
     description:
       "Complete brand identity system with logo, color palette, and brand guidelines for a modern tech startup.",
@@ -29,8 +27,8 @@ const projects: Project[] = [
 
   {
     id: 2,
-    image: "/assets/projects/project-iamge2.png",
-    title: "PUNJAB & SIND BANK | A Governemt of India Undertaking | Presents by Hope Film",
+    title:
+      "PUNJAB & SIND BANK | A Governemt of India Undertaking | Presents by Hope Film",
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
@@ -39,7 +37,6 @@ const projects: Project[] = [
 
   {
     id: 3,
-    image: "/assets/projects/project-iamge3.png",
     title: "DIGJAM | Corporate Shoot | Live Event Coverage",
     description:
       "Corporate video production with cinematic visuals, storytelling, and professional post-production editing.",
@@ -47,10 +44,10 @@ const projects: Project[] = [
     youtubeUrl: "https://youtube.com/shorts/D9DPwfNi5Bs",
   },
 
-    {
+  {
     id: 4,
-    image: "/assets/projects/project-iamge6.png",
-    title: "Mitsubishi Electric | Sponsored Tour | Managed by Deam Vacations | Presents By Hope Films",
+    title:
+      "Mitsubishi Electric | Sponsored Tour | Managed by Deam Vacations | Presents By Hope Films",
     description:
       "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
     category: "Motion Graphics",
@@ -59,7 +56,6 @@ const projects: Project[] = [
 
   {
     id: 5,
-    image: "/assets/projects/project-iamge4.png",
     title: "BEST CAR CARE | International Brand Shoot | By Hope Films",
     description:
       "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
@@ -69,14 +65,44 @@ const projects: Project[] = [
 
   {
     id: 6,
-    image: "/assets/projects/project-iamge5.png",
-    title: " Product Launch Video",
+    title: "Product Launch Video",
     description:
       "Hair Transplant Transformation | Story From Canada to Punjab",
     category: "Video Production",
     youtubeUrl: "https://youtu.be/x4fOxyLD_0A",
   },
 ];
+
+/**
+ * Extract YouTube video ID from:
+ *
+ * https://youtu.be/VIDEO_ID
+ * https://www.youtube.com/watch?v=VIDEO_ID
+ * https://youtube.com/shorts/VIDEO_ID
+ */
+const getYoutubeVideoId = (url: string): string | null => {
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([^?&/]+)/
+  );
+
+  return match ? match[1] : null;
+};
+
+/**
+ * Generate YouTube thumbnail URL
+ *
+ * hqdefault.jpg is more reliable than maxresdefault.jpg
+ * because maxresdefault is not available for every video.
+ */
+const getYoutubeThumbnail = (url: string): string => {
+  const videoId = getYoutubeVideoId(url);
+
+  if (!videoId) {
+    return "/assets/projects/fallback.jpg";
+  }
+
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+};
 
 export default function Projects() {
   const [ref, inView] = useInView({
@@ -85,7 +111,10 @@ export default function Projects() {
   });
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+    },
+
     visible: {
       opacity: 1,
       transition: {
@@ -102,7 +131,6 @@ export default function Projects() {
     >
       {/* Main Container */}
       <div className="relative z-10 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] max-w-7xl mx-auto">
-
         {/* Section Header */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -142,6 +170,7 @@ export default function Projects() {
                   y: 50,
                   opacity: 0,
                 },
+
                 visible: {
                   y: 0,
                   opacity: 1,
@@ -159,12 +188,10 @@ export default function Projects() {
             >
               {/* Project Card */}
               <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden hover:border-[var(--primary)]/40 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl">
-
                 {/* Image Container */}
                 <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-72 xl:h-80 overflow-hidden">
-
                   <Image
-                    src={project.image}
+                    src={getYoutubeThumbnail(project.youtubeUrl)}
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -181,7 +208,7 @@ export default function Projects() {
                     </span>
                   </div>
 
-                  {/* YouTube / External Link Icon */}
+                  {/* External Link Icon */}
                   <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-[var(--primary)]/80 backdrop-blur-sm border border-[var(--primary)] rounded-full p-2">
                       <ExternalLink className="w-4 h-4 text-white" />
