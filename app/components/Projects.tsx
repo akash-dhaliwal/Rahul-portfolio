@@ -20,61 +20,61 @@ const projects: Project[] = [
   {
     id: 1,
     image: "/assets/projects/project-iamge1.png",
-    title: "Brand Identity Design",
+    title: "TVC & Commercial Films | From Story to Screen",
     description:
       "Complete brand identity system with logo, color palette, and brand guidelines for a modern tech startup.",
     category: "Branding",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
+    youtubeUrl: "https://youtu.be/lRfwg3NM9Pg",
   },
 
   {
     id: 2,
     image: "/assets/projects/project-iamge2.png",
-    title: "Motion Graphics Showreel",
+    title: "PUNJAB & SIND BANK | A Governemt of India Undertaking | Presents by Hope Film",
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
+    youtubeUrl: "https://youtu.be/OszApqaVIpU",
   },
 
   {
     id: 3,
     image: "/assets/projects/project-iamge3.png",
-    title: "Video Production Portfolio",
+    title: "DIGJAM | Corporate Shoot | Live Event Coverage",
     description:
       "Corporate video production with cinematic visuals, storytelling, and professional post-production editing.",
     category: "Video Editing",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
+    youtubeUrl: "https://youtube.com/shorts/D9DPwfNi5Bs",
   },
 
-  {
+    {
     id: 4,
-    image: "/assets/projects/project-iamge4.png",
-    title: "Creative Campaign Design",
+    image: "/assets/projects/project-iamge6.png",
+    title: "Mitsubishi Electric | Sponsored Tour | Managed by Deam Vacations | Presents By Hope Films",
     description:
-      "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
-    category: "Graphic Design",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_4",
+      "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
+    category: "Motion Graphics",
+    youtubeUrl: "https://youtube.com/shorts/XV_3gu30W24",
   },
 
   {
     id: 5,
-    image: "/assets/projects/project-iamge5.png",
-    title: "Product Launch Video",
+    image: "/assets/projects/project-iamge4.png",
+    title: "BEST CAR CARE | International Brand Shoot | By Hope Films",
     description:
-      "Product launch video featuring cinematic footage, motion graphics, and engaging storytelling.",
-    category: "Video Production",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_5",
+      "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
+    category: "Graphic Design",
+    youtubeUrl: "https://youtu.be/V7NpyPMdmOk",
   },
 
   {
     id: 6,
-    image: "/assets/projects/project-iamge6.png",
-    title: "Digital Marketing Content",
+    image: "/assets/projects/project-iamge5.png",
+    title: " Product Launch Video",
     description:
-      "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
-    category: "Motion Graphics",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_6",
+      "Hair Transplant Transformation | Story From Canada to Punjab",
+    category: "Video Production",
+    youtubeUrl: "https://youtu.be/x4fOxyLD_0A",
   },
 ];
 
