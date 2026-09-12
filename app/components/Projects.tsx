@@ -65,9 +65,9 @@ const projects: Project[] = [
 
   {
     id: 6,
-    title: "Product Launch Video",
+    title: "Hair Transplant Transformation",
     description:
-      "Hair Transplant Transformation | Story From Canada to Punjab",
+      "Story From Canada to Punjab | Bhandari Hair Transplant | Hope Films",
     category: "Video Production",
     youtubeUrl: "https://youtu.be/x4fOxyLD_0A",
   },
