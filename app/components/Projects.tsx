@@ -71,6 +71,38 @@ const projects: Project[] = [
     category: "Video Production",
     youtubeUrl: "https://youtu.be/x4fOxyLD_0A",
   },
+
+    {
+    id: 7,
+    title:
+      "Hotel Dev Heaven | Live Event Coverage",
+    description:
+      "Event Edit by Hope Films",
+    category: "Motion Graphics",
+    youtubeUrl: "https://youtu.be/K1y6QLQc-tw",
+  },
+
+  {
+    id: 8,
+    title: "Brar Eye hospital Promotional Edit",
+    description:
+      "1st NABH Accredited Eye Hospital of North India | By Hope Films",
+    category: "Graphic Design",
+    youtubeUrl: "https://youtu.be/42ABm9Pcb6w",
+  },
+
+  {
+    id: 9,
+    title: "International Fitness Club | Cinematic Highlights",
+    description:
+      "Story From Canada to Punjab | Bhandari Hair Transplant | Hope Films",
+    category: "Video Production",
+    youtubeUrl: "https://youtube.com/shorts/8nuwUrib0B8",
+  },
+
+
+
+  
 ];
 
 /**
