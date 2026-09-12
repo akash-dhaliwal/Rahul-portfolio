@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     id: 2,
     title:
-      "PUNJAB & SIND BANK | A Governemt of India Undertaking | Presents by Hope Film",
+      "PUNJAB & SIND BANK | A Governemt of India Undertaking",
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
@@ -47,7 +47,7 @@ const projects: Project[] = [
   {
     id: 4,
     title:
-      "Mitsubishi Electric | Sponsored Tour | Managed by Deam Vacations | Presents By Hope Films",
+      "Mitsubishi Electric | Sponsored Tour",
     description:
       "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
     category: "Motion Graphics",
@@ -56,7 +56,7 @@ const projects: Project[] = [
 
   {
     id: 5,
-    title: "BEST CAR CARE | International Brand Shoot | By Hope Films",
+    title: "BEST CAR CARE | International Brand Shoot",
     description:
       "Multi-platform marketing campaign with cohesive visual design across digital and print media.",
     category: "Graphic Design",
