@@ -270,7 +270,7 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* View All Projects Button */}
+        {/* View All Projects Button 
         <div className="flex justify-center mt-12 md:mt-16">
           <Link href="/projects">
             <Button
@@ -281,7 +281,7 @@ export default function Projects() {
               View All Projects
             </Button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
