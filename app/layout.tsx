@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const EMAIL = "rahul@gmail.com";
+export const EMAIL = "Hopefilms.in@gmail.com";
 
 export default function RootLayout({
   children,
