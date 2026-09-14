@@ -23,7 +23,7 @@ const SocialsMenu = () => {
           </Link>
         </li>
 
-        {/* LinkedIn */}
+        {/* LinkedIn 
         <li className="text-white/70 hover:text-white transition-colors">
           <Link
             href="https://www.linkedin.com/"
@@ -33,9 +33,9 @@ const SocialsMenu = () => {
           >
             <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
           </Link>
-        </li>
+        </li> */}
 
-        {/* GitHub */}
+        {/* GitHub 
         <li className="text-white/70 hover:text-white transition-colors">
           <Link
             href="https://github.com/"
@@ -45,7 +45,7 @@ const SocialsMenu = () => {
           >
             <Github className="w-5 h-5 md:w-6 md:h-6" />
           </Link>
-        </li>
+        </li> */}
 
         {/* Facebook */}
         <li className="text-white/70 hover:text-white transition-colors">
