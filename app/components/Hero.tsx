@@ -21,7 +21,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source
-            src="/assets/Hope-films-hero.mp4"
+            src="/assets/hope films logo animation.mp4"
             type="video/mp4"
           />
         </video>
