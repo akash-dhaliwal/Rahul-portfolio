@@ -123,7 +123,7 @@ export default function Contact() {
                     </p>
 
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-                      +91 78978-97897
+                      +91 78144-99566
                     </p>
                   </div>
                 </motion.a>
