@@ -87,6 +87,17 @@ export default function About() {
               >
                 Hope Films is a film and media production company with a team of qualified filmmakers and creative professionals. Our team combines academic knowledge with real industry experience in films, music videos, commercials, and branded content.
               </motion.p>
+
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white/80"
+              >
+                We bring experience, technical expertise, and creative storytelling to every project.
+              </motion.p>
+
+              
             </motion.div>
           </div>
         </motion.div>
