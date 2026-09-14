@@ -54,7 +54,7 @@ export default function About() {
               </h2>
               <div className="flex items-baseline gap-2">
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/80">
-                  Me
+                  Hope Films
                 </p>
               </div>
             </motion.div>
@@ -76,10 +76,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white/80"
               >
-                I'm a passionate Graphic Designer and Video Editor dedicated to
-                transforming creative visions into compelling visual narratives.
-                With expertise spanning brand identity, motion graphics, and
-                video production, I craft designs that resonate and engage.
+                Trained in Filmmaking. Experienced in the Industry. Driven by Creativity.
               </motion.p>
 
               <motion.p
@@ -88,9 +85,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white/80"
               >
-                Every project is an opportunity to blend creativity with
-                strategy, creating visual stories that not only look exceptional
-                but also drive results and leave lasting impressions.
+                Hope Films is a film and media production company with a team of qualified filmmakers and creative professionals. Our team combines academic knowledge with real industry experience in films, music videos, commercials, and branded content.
               </motion.p>
             </motion.div>
           </div>
