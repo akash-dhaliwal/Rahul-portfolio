@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { ArrowRight, Palette, Video, Zap, Building2 } from "lucide-react";
+import { Palette, Video, Zap, Building2, Camera, Megaphone } from "lucide-react";
 
 interface Service {
   id: number;
@@ -17,58 +17,86 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Graphic Design",
+    title: "Video Editing",
     description:
-      "Creating visually stunning designs that communicate your brand's message effectively. From logos to marketing materials, I bring ideas to life through creative visual storytelling.",
+      "Professional video editing that transforms raw footage into engaging and polished visual stories. From social media content to cinematic projects, every edit is crafted with attention to pacing, visuals, sound, and storytelling.",
     image: "/assets/services/service-image1.png",
-    icon: <Palette className="w-8 h-8" />,
+    icon: <Video className="w-8 h-8" />,
     features: [
-      "Logo Design",
-      "Brand Identity",
-      "Print Design",
-      "Digital Graphics",
+      "Reels & Shorts",
+      "Cinematic Editing",
+      "Color Grading",
+      "Sound Design",
     ],
   },
   {
     id: 2,
-    title: "Video Editing",
+    title: "Brand Promotions",
     description:
-      "Professional video production and post-production services. Transforming raw footage into compelling narratives with cinematic quality and engaging storytelling.",
+      "Creative promotional content designed to make your brand stand out. Combining strong visuals, engaging storytelling, and modern editing techniques to create content that connects with your audience.",
     image: "/assets/services/service-image2.png",
-    icon: <Video className="w-8 h-8" />,
+    icon: <Megaphone className="w-8 h-8" />,
     features: [
-      "Video Production",
-      "Post-Production",
-      "Color Grading",
-      "Audio Mixing",
+      "Brand Videos",
+      "Social Campaigns",
+      "Promotional Reels",
+      "Creative Content",
     ],
   },
   {
     id: 3,
-    title: "Motion Graphics",
+    title: "TVC Commercial & Ad Films",
     description:
-      "Dynamic animated graphics that capture attention and enhance your brand presence. From explainer videos to animated logos, creating motion that moves audiences.",
+      "High-quality commercial and advertising films created to communicate your product or brand message with impact. From concept and visuals to editing and final delivery, every detail is crafted for professional results.",
     image: "/assets/services/service-image3.png",
     icon: <Zap className="w-8 h-8" />,
     features: [
-      "2D Animation",
-      "3D Motion",
-      "Title Sequences",
-      "Visual Effects",
+      "TVC Commercials",
+      "Ad Films",
+      "Product Ads",
+      "Cinematic Visuals",
     ],
   },
   {
     id: 4,
-    title: "Brand Identity",
+    title: "Live Event Coverage",
     description:
-      "Comprehensive brand identity solutions that establish a strong visual presence. Building cohesive brand systems that resonate with your target audience.",
+      "Professional coverage of live events with dynamic visuals that capture the atmosphere, energy, and important moments. Ideal for concerts, corporate events, launches, weddings, and special occasions.",
     image: "/assets/services/service-image4.png",
+    icon: <Camera className="w-8 h-8" />,
+    features: [
+      "Event Coverage",
+      "Multi-Camera Setup",
+      "Highlight Videos",
+      "Live Moments",
+    ],
+  },
+  {
+    id: 5,
+    title: "Product Photography & Videography",
+    description:
+      "Professional product visuals created to showcase your products in the best possible way. From clean commercial photography to engaging product videos, every shot is designed to attract attention and communicate value.",
+    image: "/assets/services/service-image5.png",
+    icon: <Palette className="w-8 h-8" />,
+    features: [
+      "Product Photography",
+      "Product Videos",
+      "Commercial Shoots",
+      "Creative Visuals",
+    ],
+  },
+  {
+    id: 6,
+    title: "Digital Marketing",
+    description:
+      "Creative digital marketing solutions that help brands build a stronger online presence. From social media content to promotional campaigns, we combine creative design and video with digital strategies.",
+    image: "/assets/services/service-image6.png",
     icon: <Building2 className="w-8 h-8" />,
     features: [
-      "Brand Strategy",
-      "Visual Identity",
-      "Brand Guidelines",
-      "Asset Creation",
+      "Social Media",
+      "Content Strategy",
+      "Campaign Creatives",
+      "Brand Growth",
     ],
   },
 ];
@@ -107,8 +135,9 @@ export default function Services() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[var(--primary)] leading-tight mb-4">
             Services
           </h2>
+
           <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto">
-            Comprehensive creative services to bring your vision to life
+            Creative solutions that bring your brand, products, and stories to life
           </p>
         </motion.div>
 
@@ -119,7 +148,7 @@ export default function Services() {
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.id}
               variants={{
@@ -147,13 +176,16 @@ export default function Services() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
 
                   {/* Icon Badge */}
                   <div className="absolute top-6 left-6 z-10">
                     <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                      <div className="text-white">{service.icon}</div>
+                      <div className="text-white">
+                        {service.icon}
+                      </div>
                     </div>
                   </div>
 
@@ -184,16 +216,6 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-
-                  {/* CTA Button */}
-                  {/* <motion.button
-                    whileHover={{ x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:bg-white hover:text-black hover:border-white transition-all duration-300 flex items-center justify-center gap-2 group/btn"
-                  >
-                    Learn More
-                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                  </motion.button> */}
                 </div>
               </div>
             </motion.div>
