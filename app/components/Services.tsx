@@ -19,7 +19,7 @@ const services: Service[] = [
     id: 1,
     title: "Video Editing",
     description:
-      "Professional video editing that transforms raw footage into engaging and polished visual stories. From social media content to cinematic projects, every edit is crafted with attention to pacing, visuals, sound, and storytelling.",
+      "Professional video editing that transforms raw footage into engaging and polished visual stories. From social media content to cinematic projects, every edit is crafted with attention to pacing, visuals, sound.",
     image: "/assets/services/service-image1.png",
     icon: <Video className="w-8 h-8" />,
     features: [
@@ -47,7 +47,7 @@ const services: Service[] = [
     id: 3,
     title: "TVC Commercial & Ad Films",
     description:
-      "High-quality commercial and advertising films created to communicate your product or brand message with impact. From concept and visuals to editing and final delivery, every detail is crafted for professional results.",
+      "High-quality commercial & advertising films created to communicate brand message with impact. From concept to editing and final delivery, every detail is crafted for professional results.",
     image: "/assets/services/service-image3.png",
     icon: <Zap className="w-8 h-8" />,
     features: [
@@ -75,7 +75,7 @@ const services: Service[] = [
     id: 5,
     title: "Product Photography & Videography",
     description:
-      "Professional product visuals created to showcase your products in the best possible way. From clean commercial photography to engaging product videos, every shot is designed to attract attention and communicate value.",
+      "Professional product visuals created to showcase your products in the best possible way. From clean commercial photography to engaging product videos, every shot is designed to attract attention.",
     image: "/assets/services/service-image5.png",
     icon: <Palette className="w-8 h-8" />,
     features: [
