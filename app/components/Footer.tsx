@@ -45,9 +45,10 @@ const Footer = () => {
                   Get in Touch
                 </Button>
               </Link>
+              {/* commented cv button
               <Button size="md" icon={<Download className="w-4 h-4" />}>
                 Download CV
-              </Button>
+              </Button> */}
             </div>
           </section>
 
