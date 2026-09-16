@@ -10,6 +10,12 @@ const clients = [
   "/assets/clents/client4.png",
   "/assets/clents/client5.png",
   "/assets/clents/client6.png",
+  "/assets/clents/client7.png",
+  "/assets/clents/client8.png",
+  "/assets/clents/client9.png",
+  "/assets/clents/client10.png",
+  "/assets/clents/client11.png",
+  "/assets/clents/client12.png",
 ];
 
 export default function Clients() {
