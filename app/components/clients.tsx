@@ -1,7 +1,9 @@
+
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 const clients = [
   "/assets/clents/client1.png",
@@ -19,79 +21,92 @@ const clients = [
 ];
 
 export default function Clients() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <section
       id="clients"
-      className="relative w-full overflow-hidden bg-[#0A0A0A] py-20 md:py-28"
+      ref={ref}
+      className="relative w-full overflow-hidden py-20 md:py-24 lg:py-28"
     >
-      {/* Section Heading */}
-      <div className="mx-auto mb-12 max-w-7xl px-6 text-center md:mb-16">
+      {/* Main Container */}
+      <div className="relative z-10 w-full">
+        {/* Section Header - Same Style as Services */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={
+            inView
+              ? { y: 0, opacity: 1 }
+              : { y: 50, opacity: 0 }
+          }
           transition={{ duration: 0.6 }}
+          className="mb-12 md:mb-16 lg:mb-20 text-center px-4"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-white/50">
-            Trusted By
-          </p>
-
-          <h2 className="text-3xl font-bold text-white md:text-5xl">
-            Our Clients
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[var(--primary)] leading-tight mb-4">
+            Our Trusted Clients
           </h2>
+
+          <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto">
+            Proud to work with brands and clients who trust our creative
+            expertise
+          </p>
         </motion.div>
-      </div>
 
-      {/* Marquee */}
-      <div className="relative w-full overflow-hidden">
-        {/* Left Fade */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-[#0A0A0A] to-transparent md:w-40" />
+        {/* Marquee */}
+        <div className="relative w-full overflow-hidden">
+          {/* Left Fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-40 z-20 bg-gradient-to-r from-[#0A0A0A] to-transparent pointer-events-none" />
 
-        {/* Right Fade */}
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-[#0A0A0A] to-transparent md:w-40" />
+          {/* Right Fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-40 z-20 bg-gradient-to-l from-[#0A0A0A] to-transparent pointer-events-none" />
 
-        <div className="flex w-max animate-[marquee_25s_linear_infinite]">
-          {/* First Set */}
-          <div className="flex items-center gap-8 px-4 md:gap-16 md:px-8">
-            {clients.map((logo, index) => (
-              <div
-                key={`client-${index}`}
-                className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] md:h-32 md:w-52"
-              >
-                <Image
-                  src={logo}
-                  alt={`Client ${index + 1}`}
-                  width={180}
-                  height={100}
-                  className="max-h-16 w-auto max-w-full object-contain opacity-80 transition-opacity duration-300 hover:opacity-100 md:max-h-20"
-                />
-              </div>
-            ))}
-          </div>
+          {/* Moving Track */}
+          <div className="flex w-max animate-[clientMarquee_28s_linear_infinite] hover:[animation-play-state:paused]">
+            {/* First Set */}
+            <div className="flex items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 px-3 sm:px-4 md:px-8">
+              {clients.map((logo, index) => (
+                <div
+                  key={`client-${index}`}
+                  className="group relative flex h-28 w-44 sm:h-32 sm:w-52 md:h-36 md:w-60 lg:h-40 lg:w-64 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.08] px-6 sm:px-8 md:px-10 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12]"
+                >
+                  <Image
+                    src={logo}
+                    alt={`Trusted Client ${index + 1}`}
+                    width={240}
+                    height={140}
+                    className="h-auto max-h-20 sm:max-h-24 md:max-h-28 w-auto max-w-full object-contain opacity-100 brightness-110 transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
 
-          {/* Duplicate Set for Infinite Marquee */}
-          <div className="flex items-center gap-8 px-4 md:gap-16 md:px-8">
-            {clients.map((logo, index) => (
-              <div
-                key={`client-duplicate-${index}`}
-                className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] md:h-32 md:w-52"
-              >
-                <Image
-                  src={logo}
-                  alt={`Client ${index + 1}`}
-                  width={180}
-                  height={100}
-                  className="max-h-16 w-auto max-w-full object-contain opacity-80 transition-opacity duration-300 hover:opacity-100 md:max-h-20"
-                />
-              </div>
-            ))}
+            {/* Duplicate Set */}
+            <div className="flex items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 px-3 sm:px-4 md:px-8">
+              {clients.map((logo, index) => (
+                <div
+                  key={`client-duplicate-${index}`}
+                  className="group relative flex h-28 w-44 sm:h-32 sm:w-52 md:h-36 md:w-60 lg:h-40 lg:w-64 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.08] px-6 sm:px-8 md:px-10 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12]"
+                >
+                  <Image
+                    src={logo}
+                    alt={`Trusted Client ${index + 1}`}
+                    width={240}
+                    height={140}
+                    className="h-auto max-h-20 sm:max-h-24 md:max-h-28 w-auto max-w-full object-contain opacity-100 brightness-110 transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Marquee Animation */}
       <style jsx>{`
-        @keyframes marquee {
+        @keyframes clientMarquee {
           from {
             transform: translateX(0);
           }
