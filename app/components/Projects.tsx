@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Play } from "lucide-react";
 import Link from "next/link";
 import Button from "./Button";
 
@@ -27,8 +27,7 @@ const projects: Project[] = [
 
   {
     id: 2,
-    title:
-      "PUNJAB & SIND BANK | A Governemt of India Undertaking",
+    title: "PUNJAB & SIND BANK | A Governemt of India Undertaking",
     description:
       "Dynamic motion graphics showcase featuring animations, transitions, and visual effects for digital campaigns.",
     category: "Motion Graphics",
@@ -46,8 +45,7 @@ const projects: Project[] = [
 
   {
     id: 4,
-    title:
-      "Mitsubishi Electric | Sponsored Tour",
+    title: "Mitsubishi Electric | Sponsored Tour",
     description:
       "Social media content series with animated graphics, video snippets, and engaging visual storytelling.",
     category: "Motion Graphics",
@@ -72,12 +70,10 @@ const projects: Project[] = [
     youtubeUrl: "https://youtu.be/x4fOxyLD_0A",
   },
 
-    {
+  {
     id: 7,
-    title:
-      "Hotel Dev Heaven | Live Event Coverage",
-    description:
-      "Event Edit by Hope Films",
+    title: "Hotel Dev Heaven | Live Event Coverage",
+    description: "Event Edit by Hope Films",
     category: "Motion Graphics",
     youtubeUrl: "https://youtu.be/K1y6QLQc-tw",
   },
@@ -99,10 +95,6 @@ const projects: Project[] = [
     category: "Video Production",
     youtubeUrl: "https://youtube.com/shorts/8nuwUrib0B8",
   },
-
-
-
-  
 ];
 
 /**
@@ -122,9 +114,6 @@ const getYoutubeVideoId = (url: string): string | null => {
 
 /**
  * Generate YouTube thumbnail URL
- *
- * hqdefault.jpg is more reliable than maxresdefault.jpg
- * because maxresdefault is not available for every video.
  */
 const getYoutubeThumbnail = (url: string): string => {
   const videoId = getYoutubeVideoId(url);
@@ -233,13 +222,6 @@ export default function Projects() {
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-black/40 backdrop-blur-sm border border-[var(--primary)]/40 text-[var(--primary)] text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium">
-                      {project.category}
-                    </span>
-                  </div>
-
                   {/* External Link Icon */}
                   <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-[var(--primary)]/80 backdrop-blur-sm border border-[var(--primary)] rounded-full p-2">
@@ -247,10 +229,13 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {/* Watch Video Text */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-[var(--primary)] text-white px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base shadow-lg">
-                      Watch Video →
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[var(--primary)] text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[var(--primary)]/90">
+                      <Play
+                        className="w-7 h-7 sm:w-8 sm:h-8 ml-1"
+                        fill="currentColor"
+                      />
                     </div>
                   </div>
                 </div>
@@ -270,7 +255,8 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* View All Projects Button 
+        {/* View All Projects Button */}
+        {/* 
         <div className="flex justify-center mt-12 md:mt-16">
           <Link href="/projects">
             <Button
@@ -281,7 +267,8 @@ export default function Projects() {
               View All Projects
             </Button>
           </Link>
-        </div> */}
+        </div> 
+        */}
       </div>
     </section>
   );
