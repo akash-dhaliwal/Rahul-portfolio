@@ -87,7 +87,8 @@ export default function Contact() {
                   </div>
                 </motion.a>
 
-                {/* Location */}
+                {/* Location - Commented Out */}
+                {/*
                 <motion.div
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
@@ -106,10 +107,11 @@ export default function Contact() {
                     </p>
                   </div>
                 </motion.div>
+                */}
 
                 {/* Phone */}
                 <motion.a
-                  href="tel:+917897897897"
+                  href="tel:+917814499566"
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
                 >
