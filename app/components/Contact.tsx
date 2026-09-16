@@ -41,8 +41,8 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+        {/* Content - Single Full Width Card */}
+        <div className="w-full">
 
           {/* Left Column - Contact Information */}
           <motion.div
@@ -53,7 +53,7 @@ export default function Contact() {
                 : { y: 50, opacity: 0 }
             }
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col space-y-6 md:space-y-8"
+            className="w-full"
           >
             {/* Contact Card */}
             <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl">
@@ -81,13 +81,13 @@ export default function Contact() {
                       Email
                     </p>
 
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white group-hover:text-white transition-colors">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
                       {EMAIL}
                     </p>
                   </div>
                 </motion.a>
 
-                {/* Location - Commented Out */}
+                {/* Location - COMMENTED OUT */}
                 {/*
                 <motion.div
                   whileHover={{ x: 5 }}
@@ -115,7 +115,7 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 md:gap-6 p-4 md:p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 md:p-6">
                     <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
 
@@ -150,7 +150,8 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right Column - Map */}
+          {/* Right Map Card - COMMENTED OUT */}
+          {/*
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={
@@ -163,7 +164,6 @@ export default function Contact() {
           >
             <div className="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
 
-              {/* Google Maps Embed */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16323.797071881629!2d74.75144082885662!3d30.67182487396008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1788842349674!5m2!1sen!2sin"
                 className="absolute top-0 left-0 w-full h-full"
@@ -171,7 +171,6 @@ export default function Contact() {
                 allowFullScreen
               />
 
-              {/* Map Overlay Info */}
               <div className="absolute bottom-4 left-4 right-4 z-10">
                 <div className="bg-black/80 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6">
 
@@ -198,6 +197,7 @@ export default function Contact() {
 
             </div>
           </motion.div>
+          */}
 
         </div>
       </div>
