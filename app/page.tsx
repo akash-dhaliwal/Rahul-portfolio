@@ -1,7 +1,8 @@
 import Hero from "./components/Hero";
-import About from "./components/About";
+import Clients from "./components/clients";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import { Metadata } from "next";
 
@@ -43,11 +44,20 @@ export default function Home() {
 
       {/* Unified Pure Black Background for All Sections */}
       <div className="relative w-full bg-[#0A0A0A]">
-        {/* Sections Container */}
         <div className="relative z-10">
-          <About />
+          {/* Clients Section */}
+          <Clients />
+
+          {/* Projects Section */}
           <Projects />
+
+          {/* Services Section */}
           <Services />
+
+          {/* About Section */}
+          <About />
+
+          {/* Contact Section */}
           <Contact />
         </div>
       </div>
