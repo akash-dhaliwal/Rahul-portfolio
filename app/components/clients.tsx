@@ -47,89 +47,32 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        {/* Clients Grid */}
+        {/* Static Client Logos */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 40, opacity: 0 }}
           animate={
             inView
               ? { y: 0, opacity: 1 }
-              : { y: 50, opacity: 0 }
+              : { y: 40, opacity: 0 }
           }
           transition={{
             duration: 0.7,
             delay: 0.2,
           }}
-          className="w-full overflow-x-auto scrollbar-hide"
+          className="w-full px-3 sm:px-5 md:px-8 lg:px-12 xl:px-16"
         >
-          <div
-            className="
-              grid
-              grid-cols-5
-              gap-3
-              sm:gap-4
-              md:gap-6
-              lg:gap-8
-              min-w-[700px]
-              md:min-w-0
-              px-4
-              sm:px-6
-              md:px-8
-              lg:px-10
-              max-w-[1800px]
-              mx-auto
-            "
-          >
+          <div className="grid grid-cols-5 gap-2 sm:gap-3 md:gap-5 lg:gap-8 max-w-7xl mx-auto">
             {clients.map((logo, index) => (
               <div
                 key={`client-${index}`}
-                className="
-                  group
-                  relative
-                  h-24
-                  sm:h-28
-                  md:h-36
-                  lg:h-44
-                  xl:h-48
-                  w-full
-                  flex
-                  items-center
-                  justify-center
-                  rounded-xl
-                  md:rounded-2xl
-                  border
-                  border-white/15
-                  bg-white/[0.08]
-                  px-3
-                  sm:px-4
-                  md:px-6
-                  lg:px-8
-                  transition-all
-                  duration-300
-                  hover:border-white/30
-                  hover:bg-white/[0.12]
-                "
+                className="group relative flex h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 items-center justify-center rounded-xl md:rounded-2xl border border-white/15 bg-white/[0.08] px-2 sm:px-3 md:px-5 lg:px-8 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12]"
               >
                 <Image
                   src={logo}
                   alt={`Trusted Client ${index + 1}`}
                   width={300}
                   height={180}
-                  className="
-                    h-auto
-                    max-h-14
-                    sm:max-h-16
-                    md:max-h-20
-                    lg:max-h-28
-                    xl:max-h-32
-                    w-auto
-                    max-w-full
-                    object-contain
-                    opacity-100
-                    brightness-110
-                    transition-transform
-                    duration-300
-                    group-hover:scale-105
-                  "
+                  className="w-full h-auto max-h-12 sm:max-h-14 md:max-h-20 lg:max-h-28 xl:max-h-32 object-contain opacity-100 brightness-110 transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             ))}
