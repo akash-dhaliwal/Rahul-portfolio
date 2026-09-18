@@ -66,7 +66,7 @@ export default function Clients() {
             {clients.map((logo, index) => (
               <div
                 key={`client-${index}`}
-                className="flex w-1/5 min-w-0 items-center justify-center overflow-visible"
+                className="flex w-1/5 min-w-0 items-center justify-center overflow-visible px-[5px]"
               >
                 <Image
                   src={logo}
