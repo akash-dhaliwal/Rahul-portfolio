@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const clients = [
@@ -31,14 +31,6 @@ export default function Clients() {
 
   const [page, setPage] = useState(0);
 
-  /*
-   * Automatically calculate how many pages are required.
-   *
-   * 12 logos = 2 pages
-   * 18 logos = 3 pages
-   * 20 logos = 4 pages
-   * etc.
-   */
   const totalPages = Math.ceil(clients.length / LOGOS_PER_PAGE);
 
   const startIndex = page * LOGOS_PER_PAGE;
@@ -48,11 +40,18 @@ export default function Clients() {
     startIndex + LOGOS_PER_PAGE
   );
 
-  const hasMore = page < totalPages - 1;
+  const isFirstPage = page === 0;
+  const isLastPage = page === totalPages - 1;
 
-  const handleLoadMore = () => {
-    if (hasMore) {
-      setPage((prevPage) => prevPage + 1);
+  const handleNext = () => {
+    if (!isLastPage) {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (!isFirstPage) {
+      setPage((prev) => prev - 1);
     }
   };
 
@@ -85,51 +84,47 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        {/* Logos Area */}
-        <div className="w-full px-1 sm:px-2 md:px-4 lg:px-6 xl:px-8">
-          <div
-            className="
-              relative
-              w-full
-              max-w-7xl
-              mx-auto
-              overflow-hidden
-              min-h-[190px]
-              sm:min-h-[210px]
-              md:min-h-[150px]
-              lg:min-h-[180px]
-              xl:min-h-[200px]
-            "
-          >
-            <AnimatePresence initial={false} mode="sync">
+        {/* Client Logos */}
+        <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
+          <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
+
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={page}
                 initial={{
-                  x: "100%",
+                  x: page > 0 ? "100%" : "-100%",
+                  opacity: 0.5,
                 }}
                 animate={{
-                  x: "0%",
+                  x: 0,
+                  opacity: 1,
                 }}
                 exit={{
-                  x: "-100%",
+                  x: page > 0 ? "-100%" : "100%",
+                  opacity: 0.5,
                 }}
                 transition={{
-                  duration: 0.75,
-                  ease: [0.22, 1, 0.36, 1],
+                  x: {
+                    duration: 0.65,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                  opacity: {
+                    duration: 0.45,
+                    ease: "easeOut",
+                  },
                 }}
                 className="
-                  absolute
-                  inset-0
                   grid
                   grid-cols-3
                   md:grid-cols-6
                   items-center
-                  gap-x-0
-                  gap-y-5
-                  sm:gap-y-7
-                  md:gap-x-1
-                  lg:gap-x-2
-                  xl:gap-x-3
+                  gap-x-1
+                  gap-y-6
+                  sm:gap-x-2
+                  sm:gap-y-8
+                  md:gap-x-3
+                  lg:gap-x-4
+                  xl:gap-x-5
                 "
               >
                 {currentClients.map((logo, index) => (
@@ -141,8 +136,9 @@ export default function Clients() {
                       min-w-0
                       items-center
                       justify-center
-                      px-0
-                      overflow-visible
+                      px-[2px]
+                      sm:px-[3px]
+                      md:px-[2px]
                     "
                   >
                     <Image
@@ -154,11 +150,11 @@ export default function Clients() {
                         block
                         w-full
                         h-auto
-                        max-h-24
-                        sm:max-h-28
-                        md:max-h-32
-                        lg:max-h-40
-                        xl:max-h-48
+                        max-h-28
+                        sm:max-h-32
+                        md:max-h-36
+                        lg:max-h-44
+                        xl:max-h-52
                         object-contain
                         brightness-110
                         transition-transform
@@ -166,7 +162,7 @@ export default function Clients() {
                         hover:scale-105
                       "
                       sizes="
-                        (max-width: 767px) 33vw,
+                        (max-width: 767px) 32vw,
                         (max-width: 1023px) 16vw,
                         16vw
                       "
@@ -177,72 +173,120 @@ export default function Clients() {
             </AnimatePresence>
           </div>
 
-          {/* Load More Button */}
-          {hasMore && (
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={
-                inView
-                  ? { opacity: 1, y: 0 }
-                  : { opacity: 0, y: 15 }
-              }
-              transition={{
-                duration: 0.5,
-                delay: 0.3,
-              }}
-              className="flex justify-center mt-8 md:mt-10"
-            >
-              <button
-                type="button"
-                onClick={handleLoadMore}
-                className="
-                  group
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  sm:gap-3
-                  rounded-full
-                  bg-[var(--primary)]
-                  px-6
-                  py-2.5
-                  sm:px-7
-                  sm:py-3
-                  md:px-8
-                  md:py-3.5
-                  text-base
-                  sm:text-lg
-                  md:text-xl
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  transition-all
-                  duration-300
-                  hover:scale-105
-                  hover:shadow-xl
-                  active:scale-95
-                "
-              >
-                <span>Load More</span>
+          {/* Navigation Buttons */}
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mt-10 md:mt-12">
 
-                <ArrowRight
-                  className="
-                    w-5
-                    h-5
-                    sm:w-6
-                    sm:h-6
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                />
-              </button>
-            </motion.div>
-          )}
+            {/* Previous Button */}
+            <button
+              type="button"
+              onClick={handlePrevious}
+              disabled={isFirstPage}
+              aria-label="Previous clients"
+              className="
+                group
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                rounded-full
+                border
+                border-[var(--primary)]/50
+                bg-white/5
+                px-5
+                py-3
+                sm:px-6
+                sm:py-3.5
+                md:px-7
+                md:py-4
+                text-sm
+                sm:text-base
+                md:text-lg
+                font-semibold
+                text-white
+                transition-all
+                duration-300
+                hover:bg-[var(--primary)]
+                hover:border-[var(--primary)]
+                hover:scale-105
+                active:scale-95
+                disabled:cursor-not-allowed
+                disabled:opacity-30
+                disabled:hover:bg-white/5
+                disabled:hover:border-[var(--primary)]/50
+                disabled:hover:scale-100
+              "
+            >
+              <ArrowLeft
+                className="
+                  w-5
+                  h-5
+                  sm:w-6
+                  sm:h-6
+                  transition-transform
+                  duration-300
+                  group-hover:-translate-x-1
+                "
+              />
+
+              <span>Previous</span>
+            </button>
+
+            {/* Load More / Next Button */}
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={isLastPage}
+              aria-label="Next clients"
+              className="
+                group
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                rounded-full
+                bg-[var(--primary)]
+                px-5
+                py-3
+                sm:px-6
+                sm:py-3.5
+                md:px-7
+                md:py-4
+                text-sm
+                sm:text-base
+                md:text-lg
+                font-semibold
+                text-white
+                shadow-lg
+                transition-all
+                duration-300
+                hover:scale-105
+                hover:shadow-xl
+                active:scale-95
+                disabled:cursor-not-allowed
+                disabled:opacity-30
+                disabled:hover:scale-100
+                disabled:hover:shadow-lg
+              "
+            >
+              <span>Load More</span>
+
+              <ArrowRight
+                className="
+                  w-5
+                  h-5
+                  sm:w-6
+                  sm:h-6
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
+            </button>
+          </div>
 
           {/* Page Indicator */}
           {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 mt-5">
+            <div className="flex items-center justify-center gap-2 mt-5">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <span
                   key={index}
@@ -250,10 +294,10 @@ export default function Clients() {
                     h-1.5
                     rounded-full
                     transition-all
-                    duration-300
+                    duration-500
                     ${
                       index === page
-                        ? "w-6 bg-[var(--primary)]"
+                        ? "w-7 bg-[var(--primary)]"
                         : "w-1.5 bg-white/30"
                     }
                   `}
