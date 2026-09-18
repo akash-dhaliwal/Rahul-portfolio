@@ -47,7 +47,7 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        {/* Static Client Logos */}
+        {/* Client Logos */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           animate={
@@ -59,20 +59,32 @@ export default function Clients() {
             duration: 0.7,
             delay: 0.2,
           }}
-          className="w-full px-3 sm:px-5 md:px-8 lg:px-12 xl:px-16"
+          className="w-full px-1 sm:px-3 md:px-6 lg:px-10 xl:px-14"
         >
-          <div className="grid grid-cols-5 gap-2 sm:gap-3 md:gap-5 lg:gap-8 max-w-7xl mx-auto">
+          {/* Exactly 5 logos in one row */}
+          <div className="flex w-full items-center justify-between gap-0">
             {clients.map((logo, index) => (
               <div
                 key={`client-${index}`}
-                className="group relative flex h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 items-center justify-center rounded-xl md:rounded-2xl border border-white/15 bg-white/[0.08] px-2 sm:px-3 md:px-5 lg:px-8 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12]"
+                className="flex w-1/5 min-w-0 items-center justify-center overflow-visible"
               >
                 <Image
                   src={logo}
                   alt={`Trusted Client ${index + 1}`}
-                  width={300}
-                  height={180}
-                  className="w-full h-auto max-h-12 sm:max-h-14 md:max-h-20 lg:max-h-28 xl:max-h-32 object-contain opacity-100 brightness-110 transition-transform duration-300 group-hover:scale-105"
+                  width={500}
+                  height={300}
+                  className="
+                    block
+                    w-[115%]
+                    max-w-none
+                    h-auto
+                    object-contain
+                    brightness-110
+                    transition-transform
+                    duration-300
+                    hover:scale-110
+                  "
+                  sizes="20vw"
                 />
               </div>
             ))}
