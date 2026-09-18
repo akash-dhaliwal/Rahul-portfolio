@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const clients = [
@@ -19,11 +19,6 @@ const clients = [
   "/assets/clents/client10.png",
   "/assets/clents/client11.png",
   "/assets/clents/client12.png",
-
-  // Add future clients here
-  // "/assets/clents/client13.png",
-  // "/assets/clents/client14.png",
-  // "/assets/clents/client15.png",
 ];
 
 const LOGOS_PER_PAGE = 6;
@@ -36,6 +31,14 @@ export default function Clients() {
 
   const [page, setPage] = useState(0);
 
+  /*
+   * Automatically calculate how many pages are required.
+   *
+   * 12 logos = 2 pages
+   * 18 logos = 3 pages
+   * 20 logos = 4 pages
+   * etc.
+   */
   const totalPages = Math.ceil(clients.length / LOGOS_PER_PAGE);
 
   const startIndex = page * LOGOS_PER_PAGE;
@@ -45,11 +48,11 @@ export default function Clients() {
     startIndex + LOGOS_PER_PAGE
   );
 
-  const hasMore = startIndex + LOGOS_PER_PAGE < clients.length;
+  const hasMore = page < totalPages - 1;
 
   const handleLoadMore = () => {
     if (hasMore) {
-      setPage((prev) => prev + 1);
+      setPage((prevPage) => prevPage + 1);
     }
   };
 
@@ -82,36 +85,48 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        {/* Client Logos */}
-        <div className="w-full px-2 sm:px-3 md:px-5 lg:px-8 xl:px-10">
-          <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
-            <AnimatePresence mode="wait" initial={false}>
+        {/* Logos Area */}
+        <div className="w-full px-1 sm:px-2 md:px-4 lg:px-6 xl:px-8">
+          <div
+            className="
+              relative
+              w-full
+              max-w-7xl
+              mx-auto
+              overflow-hidden
+              min-h-[190px]
+              sm:min-h-[210px]
+              md:min-h-[150px]
+              lg:min-h-[180px]
+              xl:min-h-[200px]
+            "
+          >
+            <AnimatePresence initial={false} mode="sync">
               <motion.div
                 key={page}
                 initial={{
-                  x: 100,
-                  opacity: 0,
+                  x: "100%",
                 }}
                 animate={{
-                  x: 0,
-                  opacity: 1,
+                  x: "0%",
                 }}
                 exit={{
-                  x: -100,
-                  opacity: 0,
+                  x: "-100%",
                 }}
                 transition={{
-                  duration: 0.45,
-                  ease: [0.25, 0.1, 0.25, 1],
+                  duration: 0.75,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
+                  absolute
+                  inset-0
                   grid
                   grid-cols-3
                   md:grid-cols-6
                   items-center
                   gap-x-0
-                  gap-y-6
-                  sm:gap-y-8
+                  gap-y-5
+                  sm:gap-y-7
                   md:gap-x-1
                   lg:gap-x-2
                   xl:gap-x-3
@@ -126,9 +141,8 @@ export default function Clients() {
                       min-w-0
                       items-center
                       justify-center
-                      px-[2px]
-                      sm:px-[2px]
-                      md:px-[2px]
+                      px-0
+                      overflow-visible
                     "
                   >
                     <Image
@@ -140,10 +154,10 @@ export default function Clients() {
                         block
                         w-full
                         h-auto
-                        max-h-28
-                        sm:max-h-32
-                        md:max-h-36
-                        lg:max-h-44
+                        max-h-24
+                        sm:max-h-28
+                        md:max-h-32
+                        lg:max-h-40
                         xl:max-h-48
                         object-contain
                         brightness-110
@@ -166,15 +180,15 @@ export default function Clients() {
           {/* Load More Button */}
           {hasMore && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={
                 inView
                   ? { opacity: 1, y: 0 }
-                  : { opacity: 0, y: 20 }
+                  : { opacity: 0, y: 15 }
               }
               transition={{
-                duration: 0.6,
-                delay: 0.4,
+                duration: 0.5,
+                delay: 0.3,
               }}
               className="flex justify-center mt-8 md:mt-10"
             >
@@ -187,14 +201,15 @@ export default function Clients() {
                   items-center
                   justify-center
                   gap-2
+                  sm:gap-3
                   rounded-full
                   bg-[var(--primary)]
                   px-6
-                  py-3
+                  py-2.5
                   sm:px-7
-                  sm:py-3.5
+                  sm:py-3
                   md:px-8
-                  md:py-4
+                  md:py-3.5
                   text-base
                   sm:text-lg
                   md:text-xl
@@ -227,7 +242,7 @@ export default function Clients() {
 
           {/* Page Indicator */}
           {totalPages > 1 && (
-            <div className="flex justify-center gap-2 mt-4">
+            <div className="flex justify-center items-center gap-2 mt-5">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <span
                   key={index}
