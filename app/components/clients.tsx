@@ -6,10 +6,10 @@ import Image from "next/image";
 
 const clients = [
   "/assets/clents/client1.png",
-  "/assets/clents/client2.png",
   "/assets/clents/client3.png",
-  "/assets/clents/client4.png",
   "/assets/clents/client5.png",
+  "/assets/clents/client6.png",
+  "/assets/clents/client8.png",
 ];
 
 export default function Clients() {
