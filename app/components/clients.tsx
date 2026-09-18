@@ -1,8 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const clients = [
   "/assets/clents/client1.png",
@@ -10,13 +12,40 @@ const clients = [
   "/assets/clents/client3.png",
   "/assets/clents/client4.png",
   "/assets/clents/client5.png",
+  "/assets/clents/client6.png",
+  "/assets/clents/client7.png",
+  "/assets/clents/client8.png",
+  "/assets/clents/client9.png",
+  "/assets/clents/client10.png",
+  "/assets/clents/client11.png",
+  "/assets/clents/client12.png",
 ];
+
+const LOGOS_PER_PAGE = 6;
 
 export default function Clients() {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  const [page, setPage] = useState(0);
+
+  const totalPages = Math.ceil(clients.length / LOGOS_PER_PAGE);
+
+  const startIndex = page * LOGOS_PER_PAGE;
+  const currentClients = clients.slice(
+    startIndex,
+    startIndex + LOGOS_PER_PAGE
+  );
+
+  const hasMore = startIndex + LOGOS_PER_PAGE < clients.length;
+
+  const handleLoadMore = () => {
+    if (hasMore) {
+      setPage((prev) => prev + 1);
+    }
+  };
 
   return (
     <section
@@ -48,48 +77,171 @@ export default function Clients() {
         </motion.div>
 
         {/* Client Logos */}
-        <motion.div
-          initial={{ y: 40, opacity: 0 }}
-          animate={
-            inView
-              ? { y: 0, opacity: 1 }
-              : { y: 40, opacity: 0 }
-          }
-          transition={{
-            duration: 0.7,
-            delay: 0.2,
-          }}
-          className="w-full px-1 sm:px-3 md:px-6 lg:px-10 xl:px-14"
-        >
-          {/* Exactly 5 logos in one row */}
-          <div className="flex w-full items-center justify-between gap-0">
-            {clients.map((logo, index) => (
-              <div
-                key={`client-${index}`}
-                className="flex w-1/5 min-w-0 items-center justify-center overflow-visible px-[2px]"
+        <div className="w-full px-3 sm:px-5 md:px-8 lg:px-10 xl:px-14">
+          <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={page}
+                initial={{
+                  x: 120,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                }}
+                exit={{
+                  x: -120,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                className="
+                  grid
+                  grid-cols-3
+                  md:grid-cols-6
+                  items-center
+                  gap-x-2
+                  gap-y-8
+                  sm:gap-x-4
+                  sm:gap-y-10
+                  md:gap-x-5
+                  lg:gap-x-8
+                  xl:gap-x-10
+                "
               >
-                <Image
-                  src={logo}
-                  alt={`Trusted Client ${index + 1}`}
-                  width={500}
-                  height={300}
+                {currentClients.map((logo, index) => (
+                  <div
+                    key={`${page}-${index}`}
+                    className="
+                      flex
+                      w-full
+                      min-w-0
+                      items-center
+                      justify-center
+                      px-[5px]
+                      sm:px-[7px]
+                      md:px-[5px]
+                    "
+                  >
+                    <Image
+                      src={logo}
+                      alt={`Trusted Client ${startIndex + index + 1}`}
+                      width={500}
+                      height={300}
+                      className="
+                        block
+                        w-full
+                        h-auto
+                        max-h-24
+                        sm:max-h-28
+                        md:max-h-32
+                        lg:max-h-40
+                        xl:max-h-44
+                        object-contain
+                        brightness-110
+                        transition-transform
+                        duration-300
+                        hover:scale-105
+                      "
+                      sizes="
+                        (max-width: 767px) 33vw,
+                        (max-width: 1023px) 16vw,
+                        16vw
+                      "
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Load More Button */}
+          {hasMore && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                inView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 20 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: 0.4,
+              }}
+              className="flex justify-center mt-10 md:mt-12"
+            >
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-full
+                  bg-[var(--primary)]
+                  px-6
+                  py-3
+                  sm:px-7
+                  sm:py-3.5
+                  md:px-8
+                  md:py-4
+                  text-base
+                  sm:text-lg
+                  md:text-xl
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                  hover:shadow-xl
+                  active:scale-95
+                "
+              >
+                <span>Load More</span>
+
+                <ArrowRight
                   className="
-                    block
-                    w-[115%]
-                    max-w-none
-                    h-auto
-                    object-contain
-                    brightness-110
+                    w-5
+                    h-5
+                    sm:w-6
+                    sm:h-6
                     transition-transform
                     duration-300
-                    hover:scale-110
+                    group-hover:translate-x-1
                   "
-                  sizes="20vw"
                 />
-              </div>
-            ))}
-          </div>
-        </motion.div>
+              </button>
+            </motion.div>
+          )}
+
+          {/* Page Indicator */}
+          {totalPages > 1 && (
+            <div className="flex justify-center gap-2 mt-5">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <span
+                  key={index}
+                  className={`
+                    h-1.5
+                    rounded-full
+                    transition-all
+                    duration-300
+                    ${
+                      index === page
+                        ? "w-6 bg-[var(--primary)]"
+                        : "w-1.5 bg-white/30"
+                    }
+                  `}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
