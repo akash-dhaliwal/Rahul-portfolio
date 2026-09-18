@@ -19,6 +19,11 @@ const clients = [
   "/assets/clents/client10.png",
   "/assets/clents/client11.png",
   "/assets/clents/client12.png",
+
+  // Add future clients here
+  // "/assets/clents/client13.png",
+  // "/assets/clents/client14.png",
+  // "/assets/clents/client15.png",
 ];
 
 const LOGOS_PER_PAGE = 6;
@@ -34,6 +39,7 @@ export default function Clients() {
   const totalPages = Math.ceil(clients.length / LOGOS_PER_PAGE);
 
   const startIndex = page * LOGOS_PER_PAGE;
+
   const currentClients = clients.slice(
     startIndex,
     startIndex + LOGOS_PER_PAGE
@@ -77,13 +83,13 @@ export default function Clients() {
         </motion.div>
 
         {/* Client Logos */}
-        <div className="w-full px-3 sm:px-5 md:px-8 lg:px-10 xl:px-14">
+        <div className="w-full px-2 sm:px-3 md:px-5 lg:px-8 xl:px-10">
           <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={page}
                 initial={{
-                  x: 120,
+                  x: 100,
                   opacity: 0,
                 }}
                 animate={{
@@ -91,11 +97,11 @@ export default function Clients() {
                   opacity: 1,
                 }}
                 exit={{
-                  x: -120,
+                  x: -100,
                   opacity: 0,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.45,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
                 className="
@@ -103,13 +109,12 @@ export default function Clients() {
                   grid-cols-3
                   md:grid-cols-6
                   items-center
-                  gap-x-2
-                  gap-y-8
-                  sm:gap-x-4
-                  sm:gap-y-10
-                  md:gap-x-5
-                  lg:gap-x-8
-                  xl:gap-x-10
+                  gap-x-0
+                  gap-y-6
+                  sm:gap-y-8
+                  md:gap-x-1
+                  lg:gap-x-2
+                  xl:gap-x-3
                 "
               >
                 {currentClients.map((logo, index) => (
@@ -121,25 +126,25 @@ export default function Clients() {
                       min-w-0
                       items-center
                       justify-center
-                      px-[5px]
-                      sm:px-[7px]
-                      md:px-[5px]
+                      px-[2px]
+                      sm:px-[2px]
+                      md:px-[2px]
                     "
                   >
                     <Image
                       src={logo}
                       alt={`Trusted Client ${startIndex + index + 1}`}
-                      width={500}
-                      height={300}
+                      width={600}
+                      height={350}
                       className="
                         block
                         w-full
                         h-auto
-                        max-h-24
-                        sm:max-h-28
-                        md:max-h-32
-                        lg:max-h-40
-                        xl:max-h-44
+                        max-h-28
+                        sm:max-h-32
+                        md:max-h-36
+                        lg:max-h-44
+                        xl:max-h-48
                         object-contain
                         brightness-110
                         transition-transform
@@ -171,7 +176,7 @@ export default function Clients() {
                 duration: 0.6,
                 delay: 0.4,
               }}
-              className="flex justify-center mt-10 md:mt-12"
+              className="flex justify-center mt-8 md:mt-10"
             >
               <button
                 type="button"
@@ -181,7 +186,7 @@ export default function Clients() {
                   inline-flex
                   items-center
                   justify-center
-                  gap-3
+                  gap-2
                   rounded-full
                   bg-[var(--primary)]
                   px-6
@@ -222,7 +227,7 @@ export default function Clients() {
 
           {/* Page Indicator */}
           {totalPages > 1 && (
-            <div className="flex justify-center gap-2 mt-5">
+            <div className="flex justify-center gap-2 mt-4">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <span
                   key={index}
