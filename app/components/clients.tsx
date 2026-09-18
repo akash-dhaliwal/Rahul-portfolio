@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 const clients = [
-  "/assets/clents/client1.png",
+  "/assets/clents/client10.png",
   "/assets/clents/client3.png",
   "/assets/clents/client5.png",
   "/assets/clents/client6.png",
