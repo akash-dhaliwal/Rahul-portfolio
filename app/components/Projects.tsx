@@ -181,11 +181,8 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
         >
           {projects.map((project) => (
-            <motion.a
+            <motion.div
               key={project.id}
-              href={project.youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               variants={{
                 hidden: {
                   y: 50,
@@ -207,56 +204,73 @@ export default function Projects() {
               }}
               className="group relative block cursor-pointer"
             >
-              {/* Project Card */}
-              <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden hover:border-[var(--primary)]/40 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                {/* Image Container */}
-                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-72 xl:h-80 overflow-hidden">
-                  <Image
-                    src={getYoutubeThumbnail(project.youtubeUrl)}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+              {/* Main Project Link - Opens in Same Tab */}
+              <a
+                href={project.youtubeUrl}
+                className="block"
+              >
+                {/* Project Card */}
+                <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden hover:border-[var(--primary)]/40 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                  {/* Image Container */}
+                  <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-72 xl:h-80 overflow-hidden">
+                    <Image
+                      src={getYoutubeThumbnail(project.youtubeUrl)}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
 
-                  {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* External Link Icon */}
-                  <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-[var(--primary)]/80 backdrop-blur-sm border border-[var(--primary)] rounded-full p-2">
-                      <ExternalLink className="w-4 h-4 text-white" />
+                    {/* External Link Icon */}
+                    <div
+                      className="absolute top-4 right-4 z-20"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <a
+                        href={project.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} in a new tab`}
+                        className="block opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <div className="bg-[var(--primary)]/80 backdrop-blur-sm border border-[var(--primary)] rounded-full p-2">
+                          <ExternalLink className="w-4 h-4 text-white" />
+                        </div>
+                      </a>
+                    </div>
+
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[var(--primary)] text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[var(--primary)]/90">
+                        <Play
+                          className="w-7 h-7 sm:w-8 sm:h-8 ml-1"
+                          fill="currentColor"
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-[var(--primary)] text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[var(--primary)]/90">
-                      <Play
-                        className="w-7 h-7 sm:w-8 sm:h-8 ml-1"
-                        fill="currentColor"
-                      />
-                    </div>
+                  {/* Content */}
+                  <div className="p-5 sm:p-6 md:p-8">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-5 sm:p-6 md:p-8">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-            </motion.a>
+              </a>
+            </motion.div>
           ))}
         </motion.div>
 
         {/* View All Projects Button */}
-        {/* 
+        {/*
         <div className="flex justify-center mt-12 md:mt-16">
           <Link href="/projects">
             <Button
@@ -267,7 +281,7 @@ export default function Projects() {
               View All Projects
             </Button>
           </Link>
-        </div> 
+        </div>
         */}
       </div>
     </section>
