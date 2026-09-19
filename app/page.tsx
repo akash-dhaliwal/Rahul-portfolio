@@ -45,20 +45,20 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://hopefilms.in",
     siteName: "Hope Films",
-    title: "Hope Films",
+    title: "Hope Films | Film & Meida Production",
     description:
-      "Hope Films brings brands and stories to life through TVC commercials, ad films, brand promotions, cinematic video production, live event coverage, product photography, videography, and digital content.",
+      "Hope Films brings brands and stories to life through TVC commercials, ad films, brand promotions, cinematic video production, live event coverage, product photography, videography and digital content.",
     images: [
       {
         url: "/asset/logoion.png",
-        alt: "Hope Films - Film & Media Production Company",
+        alt: "Hope Films - Film & Media Production",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Hope Films",
+    title: "Hope Films | Film & Meida Production",
     description:
       "Creative film and media production for brands, businesses and events. TVCs, ad films, brand promotions, video editing, event coverage, product visuals and digital content.",
     images: ["/asset/logoion.png"],
