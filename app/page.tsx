@@ -7,34 +7,65 @@ import Contact from "./components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rahul | Graphic Designer & Video Editor Portfolio",
+  title: "Hope Films | Film & Media Production Company in Punjab",
+
   description:
-    "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
+    "Hope Films is a film and media production company specializing in TVC commercials, ad films, brand promotions, video editing, live event coverage, product photography, videography and digital marketing.",
+
   keywords: [
-    "Graphic Designer",
-    "Video Editor",
-    "Adobe Photoshop",
-    "Adobe Illustrator",
-    "Adobe After Effects",
-    "Adobe Premiere Pro",
-    "Adobe XD",
+    "Hope Films",
+    "Film Production Company",
+    "Media Production Company",
+    "Video Production",
+    "TVC Commercials",
+    "Ad Films",
+    "Brand Promotion",
+    "Corporate Videos",
+    "Video Editing",
+    "Live Event Coverage",
+    "Product Photography",
+    "Product Videography",
+    "Digital Marketing",
+    "Film Production Punjab",
+    "Video Production Punjab",
+    "Faridkot Video Production",
   ],
-  robots: "index, follow",
-  openGraph: {
-    images:
-      "https://i.ibb.co/3PJzhXw/B58-A4-A9-C-C3-BE-4-E18-AEDD-8639-B169-A57-D.png",
-    title: "Rahul | Graphic Designer & Video Editor Portfolio",
-    description:
-      "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
+
+  authors: [{ name: "Hope Films" }],
+  creator: "Hope Films",
+  publisher: "Hope Films",
+
+  robots: {
+    index: true,
+    follow: true,
   },
-  twitter: {
-    images:
-      "https://i.ibb.co/3PJzhXw/B58-A4-A9-C-C3-BE-4-E18-AEDD-8639-B169-A57-D.png",
-    title: "Rahul | Graphic Designer & Video Editor Portfolio",
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://hopefilms.in",
+    siteName: "Hope Films",
+    title: "Hope Films",
     description:
-      "Graphic Designer & Video Editor with expertise in Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, and Adobe XD. Passionate about creating visual stories that inspire and engage.",
+      "Hope Films brings brands and stories to life through TVC commercials, ad films, brand promotions, cinematic video production, live event coverage, product photography, videography, and digital content.",
+    images: [
+      {
+        url: "/asset/logoion.png",
+        alt: "Hope Films - Film & Media Production Company",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Hope Films",
+    description:
+      "Creative film and media production for brands, businesses and events. TVCs, ad films, brand promotions, video editing, event coverage, product visuals and digital content.",
+    images: ["/asset/logoion.png"],
   },
 };
+
+
 
 export default function Home() {
   return (
